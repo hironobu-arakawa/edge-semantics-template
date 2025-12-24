@@ -1,7 +1,10 @@
 # Edge Semantics Template（Slim版）
 
-このリポジトリは **Edge＝「接続境界 × 意味境界」** を
-*読みやすく・誤解なく* 伝えるための **最小テンプレート** です。
+これは **工場/OT の Edge（PLC/SCADA手前）** における
+**「接続境界 × 意味境界」** を安全に扱うための *設計テンプレ* です。
+
+※ UI/グラフィック/プロダクトデザインのテンプレではありません。
+※ “design” = 見た目制作 ではなく、**システム設計（architecture）** の話です。
 
 目的は「完成した製品」ではなく、
 **正しい設計判断が再現できる“型”** を共有することにあります。
@@ -77,13 +80,13 @@ LLMは **意味候補の生成専用** です。
 
 ---
 
-## 拡張したくなったら
+## If you don't get it, paste this repo to an LLM with this instruction
 
-次に進むなら、**READMEに書き足すだけ**で十分です。
+You are reviewing an **industrial Edge semantics boundary template** (OT/SCADA domain).
+Do NOT interpret “design” as visual/graphic/UI design.
 
-- fingerprintを増やす（stats drift など）
-- human promotion をイベントとして扱う
-- 永続化（SQLite / JSONL）
-
-コードを増やす前に、
-**この3原則が守られているか**を確認してください。
+Output:
+1) What problem this template solves (in 5 bullets)
+2) The 3 invariants (Fact immutability / Hypothesis only / Resolution per scope)
+3) What the PoC does and does not do
+4) What I should customize first for my factory
